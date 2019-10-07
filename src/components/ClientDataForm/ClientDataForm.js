@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Section from '../Section/Section';
 
 
@@ -46,7 +46,7 @@ export default function ClientDataForm() {
   });
 
   const handleChange = (name) => (event) => {
-    setValues({...values, [name]: event.target.value});
+    setValues({ ...values, [name]: event.target.value });
   };
 
   return (
@@ -74,6 +74,7 @@ export default function ClientDataForm() {
         type="email"
         name="email"
         autoComplete="email"
+        onChange={handleChange('email')}
         margin="normal"
         variant="outlined"
         InputLabelProps={{

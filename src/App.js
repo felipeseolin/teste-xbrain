@@ -1,13 +1,12 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
-import ListPage from "./pages/ListPage/ListPage";
+import BuyPage from './pages/BuyPage/BuyPage';
 
 function App() {
   return (
     <div className="App">
-      <ListPage/>
+      <BuyPage />
     </div>
   );
 }
