@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "AirPods Apple Fones de ouvido",
+      "photo": "",
+      "price": 1449,
+      "numParcelas": 12,
+      "priceParcela": 124.92,
+      "priceAVista": 1349,
+      "porcentagemDesconto": 10
+    },
+    {
+      "id": 2,
+      "name": "Capa de silicone para iPhone 8/7 cor Areia - rosa",
+      "photo": "",
+      "price": 299,
+      "numParcelas": 12,
+      "priceParcela": 24.92,
+      "priceAVista": 269.10,
+      "porcentagemDesconto": 10
+    },
+    {
+      "id": 3,
+      "name": "Apple Pencil",
+      "photo": "",
+      "price": 729,
+      "numParcelas": 12,
+      "priceParcela": 60.75,
+      "priceAVista": 656.10,
+      "porcentagemDesconto": 10
+    },
+    {
+      "id": 4,
+      "name": "Magic Mouse 2 - Prateado",
+      "photo": "",
+      "price": 549,
+      "numParcelas": 12,
+      "priceParcela": 45.75,
+      "priceAVista": 495.10,
+      "porcentagemDesconto": 10
+    },
+    {
+      "id": 5,
+      "name": "Caixa prateada de alumínio com pulseira esportiva branca",
+      "photo": "",
+      "price": 2899,
+      "numParcelas": 12,
+      "priceParcela": 241.58,
+      "priceAVista": 2609.10,
+      "porcentagemDesconto": 10
+    },
+    {
+      "id": 6,
+      "name": "Cabo de lightning para USB (1m)",
+      "photo": "",
+      "price": 149,
+      "numParcelas": 12,
+      "priceParcela": 12.42,
+      "priceAVista": 134.10,
+      "porcentagemDesconto": 10
+    },
+    {
+      "id": 7,
+      "name": "Smart Keyboard para iPad Pro 12,9 polegadas - inglês (EUA)",
+      "photo": "",
+      "price": 1099,
+      "numParcelas": 12,
+      "priceParcela": 91.58,
+      "priceAVista": 989.10,
+      "porcentagemDesconto": 10
+    },
+    {
+      "id": 8,
+      "name": "Carregador USB de 5W Apple",
+      "photo": "",
+      "price": 149,
+      "numParcelas": 12,
+      "priceParcela": 12.42,
+      "priceAVista": 134.10,
+      "porcentagemDesconto": 10
+    }
+  ]
+}
