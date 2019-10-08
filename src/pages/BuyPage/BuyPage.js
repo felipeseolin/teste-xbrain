@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import { Link } from 'react-router-dom';
 import ClientDataForm from '../../components/ClientDataForm/ClientDataForm';
 import Section from '../../components/Section/Section';
 import ProductsList from '../../components/ProductsList/ProductsList';
@@ -59,6 +60,8 @@ export default function BuyPage() {
                   variant="contained"
                   href="#contained-buttons"
                   className={classes.button}
+                  component={Link}
+                  to="/finish"
                 >
                   Finalizar Compra
                 </Button>
