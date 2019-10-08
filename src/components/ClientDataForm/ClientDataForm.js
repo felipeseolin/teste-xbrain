@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Section from '../Section/Section';
 
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
+    width: '100%',
   },
   dense: {
     marginTop: theme.spacing(2),
@@ -50,66 +52,75 @@ export default function ClientDataForm() {
   };
 
   return (
+
     <Section title="Dados do cliente">
+      <Grid container spacing={2}>
 
-      <TextField
-        id="outlined-name"
-        label="Name"
-        placeholder="Nome do cliente aqui"
-        className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
-        margin="normal"
-        variant="outlined"
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
+        <Grid item xs={12} sm={5} md={5} lg={5}>
+          <TextField
+            id="outlined-name"
+            label="Name"
+            placeholder="Nome do cliente aqui"
+            className={classes.textField}
+            value={values.name}
+            onChange={handleChange('name')}
+            margin="normal"
+            variant="outlined"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+        </Grid>
 
-      <TextField
-        id="outlined-email-input"
-        label="Email"
-        className={classes.textField}
-        placeholder="Digite seu email aqui"
-        type="email"
-        name="email"
-        autoComplete="email"
-        onChange={handleChange('email')}
-        margin="normal"
-        variant="outlined"
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
+        <Grid item xs={12} sm={5} md={5} lg={5}>
+          <TextField
+            id="outlined-email-input"
+            label="Email"
+            className={classes.textField}
+            placeholder="Digite seu email aqui"
+            type="email"
+            name="email"
+            autoComplete="email"
+            onChange={handleChange('email')}
+            margin="normal"
+            variant="outlined"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+        </Grid>
 
-      <TextField
-        id="outlined-select-currency"
-        select
-        label="Sexo"
-        className={classes.textField}
-        value={values.sex}
-        onChange={handleChange('sex')}
-        SelectProps={{
-          MenuProps: {
-            className: classes.menu,
-          },
-        }}
-        margin="normal"
-        variant="outlined"
-        InputLabelProps={{
-          shrink: true,
-        }}
-      >
-        <MenuItem key="null" value="null" disabled>
-          Selecione
-        </MenuItem>
+        <Grid item xs={12} sm={2} md={2} lg={2}>
+          <TextField
+            id="outlined-select-currency"
+            select
+            label="Sexo"
+            className={classes.textField}
+            value={values.sex}
+            onChange={handleChange('sex')}
+            SelectProps={{
+              MenuProps: {
+                className: classes.menu,
+              },
+            }}
+            margin="normal"
+            variant="outlined"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          >
+            <MenuItem key="null" value="null" disabled>
+              Selecione
+            </MenuItem>
 
-        {sexes.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
-            {option.label}
-          </MenuItem>
-        ))}
-      </TextField>
+            {sexes.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+      </Grid>
 
     </Section>
   );

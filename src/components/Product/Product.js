@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -13,36 +13,42 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Remove from '@material-ui/icons/Remove';
 
-import {maskPrice} from '../../utils/maks';
+import { maskPrice } from '../../utils/maks';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   card: {
-    height: 600,
+    height: 650,
     borderWidth: 0,
     border: 'none',
     shadowColor: 'none',
   },
   button: {
     margin: theme.spacing(1),
-    width: '100%',
+    width: '90%',
   },
   input: {
     backgroundColor: 'white',
+    textAlign: 'center',
+  },
+  fab: {
+    width: 35,
+    height: 35,
+    backgroundColor: 'gray',
   },
 }));
 
 export default function Product({
-                                  name,
-                                  photo,
-                                  price,
-                                  numParcelas,
-                                  priceParcela,
-                                  priceAVista,
-                                  porcentagemDesconto,
-                                }) {
+  name,
+  photo,
+  price,
+  numParcelas,
+  priceParcela,
+  priceAVista,
+  porcentagemDesconto,
+}) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     number: 0,
@@ -50,7 +56,7 @@ export default function Product({
 
   const handleChange = (nameInput, isAdd) => (event) => {
     if (isAdd === undefined) {
-      setValues({...values, [nameInput]: event.target.value});
+      setValues({ ...values, [nameInput]: parseInt(event.target.value, 10) });
     } else {
       setValues({
         ...values,
@@ -87,23 +93,25 @@ export default function Product({
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions />
-        <Grid container spacing={1}>
-          <Fab
-            color="primary"
-            aria-label="add"
-            className={classes.fab}
-            onClick={handleChange('number', false)}
-          >
-            <Remove/>
-          </Fab>
-          <Grid item xs={6} sm={6} md={6} lg={6}>
+        <Grid container spacing={1} alignItems="center" justify="center">
+          <Grid item xs={2} sm={2} md={2} lg={2}>
+            <Fab
+              id="minum"
+              color="primary"
+              aria-label="add"
+              className={classes.fab}
+              onClick={handleChange('number', false)}
+            >
+              <Remove />
+            </Fab>
+          </Grid>
+          <Grid item xs={7} sm={7} md={7} lg={7}>
             <TextField
               id="number"
               value={values.number}
               onChange={handleChange('number')}
               type="number"
-              className={classes.textField}
+              className={classes.input}
               InputLabelProps={{
                 shrink: false,
               }}
@@ -111,21 +119,26 @@ export default function Product({
               variant="filled"
             />
           </Grid>
-          <Fab
-            color="primary"
-            aria-label="add"
-            className={classes.fab}
-            onClick={handleChange('number', true)}
-          >
-            <AddIcon/>
-          </Fab>
 
-          <Button>Teste</Button>
+          <Grid item xs={2} sm={2} md={2} lg={2}>
+            <Fab
+              color="primary"
+              aria-label="add"
+              className={classes.fab}
+              onClick={handleChange('number', true)}
+            >
+              <AddIcon />
+            </Fab>
+          </Grid>
         </Grid>
 
-        <Button variant="contained" color="primary" className={classes.button}>
-          Adicionar
-        </Button>
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Button variant="contained" color="primary" className={classes.button}>
+              Adicionar
+            </Button>
+          </Grid>
+        </Grid>
       </Card>
     </Grid>
   );

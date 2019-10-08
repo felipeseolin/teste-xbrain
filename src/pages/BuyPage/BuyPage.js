@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
+    backgroundColor: 'orange',
+    color: '#fff',
+    height: '100%',
   },
 }));
 
@@ -40,16 +43,28 @@ export default function BuyPage() {
             <ClientDataForm />
           </Grid>
 
-          <Typography variant="h6" component="h6">
-            Total: R$ 15,00
-          </Typography>
-          <Button
-            variant="contained"
-            href="#contained-buttons"
-            className={classes.button}
-          >
-            Finalizar Compra
-          </Button>
+          <Grid container spacing={1} justify="flex-end" alignContent="flex-end" alignItems="flex-end">
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <Typography variant="h6" component="h6">
+                <Grid container spacing={1} justify="flex-end" alignContent="flex-end" alignItems="flex-end">
+                  Total: R$ 15,00
+                </Grid>
+              </Typography>
+            </Grid>
+
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <Grid container spacing={1} justify="flex-end" alignContent="flex-end" alignItems="flex-end">
+
+                <Button
+                  variant="contained"
+                  href="#contained-buttons"
+                  className={classes.button}
+                >
+                  Finalizar Compra
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
       </Container>
     </>
